@@ -129,9 +129,7 @@ var Youtube = {
       this.$emit('ready', e.target);
     },
     playerStateChange: function playerStateChange (e) {
-      if (e.data !== null && e.data !== UNSTARTED) {
-        this.$emit(this.events[e.data], e.target);
-      }
+      this.$emit('stateChange', e.target);
     },
     playerError: function playerError (e) {
       this.$emit('error', e.target);
